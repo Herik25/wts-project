@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Custom font families */
+@theme {
+  --font-family-poppins: "poppins", sans-serif;
+  --font-family-bungee-spice: "Bungee Spice", cursive;
+  --font-family-montserrat: "Montserrat", sans-serif;
+  --font-family-karla: "Karla", sans-serif;
+
+  /* Custom animations */
+  --animate-gradient-shine: shine-loading 2s infinite ease-out;
+}
+
+/* Keyframes for gradient shine animation */
+@keyframes shine-loading {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Custom utilities */
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Layer utilities (if you need forms support, you'll need to implement it manually or use a plugin) */
+@layer utilities {
+  .animate-gradient-shine {
+    animation: var(--animate-gradient-shine);
+  }
+}
